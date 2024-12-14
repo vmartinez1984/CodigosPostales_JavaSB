@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "26eb882d-2e4c-40f9-ba90-710001655ec9",
+		"name": "Codigos Postales",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2660252"
+	},
+	"item": [
+		{
+			"name": "Estados",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/CodigosPostales/Estados",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"CodigosPostales",
+						"Estados"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alcaldias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/CodigosPostales/Estados/9/Alcaldias/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"CodigosPostales",
+						"Estados",
+						"9",
+						"Alcaldias",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Codigos postales por alcaldia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/CodigosPostales/Estados/9/Alcaldias/15",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"CodigosPostales",
+						"Estados",
+						"9",
+						"Alcaldias",
+						"15"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Codigo postal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/CodigosPostales/42950",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"CodigosPostales",
+						"42950"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Codigo postal search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/CodigosPostales/Obrera/Buscar",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"CodigosPostales",
+						"Obrera",
+						"Buscar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Codigo postal search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/CodigosPostales/Estados/9/Alcaldias/15/Obrera/Buscar",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"CodigosPostales",
+						"Estados",
+						"9",
+						"Alcaldias",
+						"15",
+						"Obrera",
+						"Buscar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aleatorio de estado",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/CodigosPostales/Estados/9/Aleatorio",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"CodigosPostales",
+						"Estados",
+						"9",
+						"Aleatorio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Aleatorio",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/api/CodigosPostales/Aleatorio",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"CodigosPostales",
+						"Aleatorio"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Error",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5227/api/Tests/Errores?error=nacer%20pobre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5227",
+					"path": [
+						"api",
+						"Tests",
+						"Errores"
+					],
+					"query": [
+						{
+							"key": "error",
+							"value": "nacer%20pobre"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Codigos postales",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "*/*"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "formFile",
+							"contentType": "text/plain",
+							"type": "file",
+							"src": "/C:/Users/vmartinez/Downloads/CPdescarga.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5227/api/CodigosPostales",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5227",
+					"path": [
+						"api",
+						"CodigosPostales"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
