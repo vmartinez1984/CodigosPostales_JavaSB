@@ -21,11 +21,6 @@ public class CodigoPostalController {
     @Autowired
     private CodigoPostalRepository repository;
 
-    @GetMapping("HolaMundo")
-    public String getMethodName() {
-        return "Hola mundo";
-    }
-
     @GetMapping("Estados")
     public List<EstadoDto> obtnerEstadoDtos() {
         List<EstadoDto> estados = new ArrayList<>();
