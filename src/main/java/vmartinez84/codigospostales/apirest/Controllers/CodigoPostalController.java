@@ -69,17 +69,8 @@ public class CodigoPostalController {
     @GetMapping("Aleatorio")
     public CodigoPostalEntidad ObtenerCodigoPostal() {
         CodigoPostalEntidad cPostalEntidad;
-        int total;
-        Random random = new Random();
-
-        total = (int) repository.count();
-        System.out.println(total);
-        do {
-            int id;
-
-            id = random.nextInt(total);
-            cPostalEntidad = repository.findById(id).orElse(null);
-        } while (cPostalEntidad == null);
+        
+        cPostalEntidad = repository.getRandom();
 
         return cPostalEntidad;
     }
@@ -87,19 +78,8 @@ public class CodigoPostalController {
     @GetMapping("Estados/{estadoId}/Aleatorio")
     public CodigoPostalEntidad ObtenerCodigoPostalAleatorioDeEstado(@PathVariable int estadoId) {
         CodigoPostalEntidad cPostalEntidad;
-        int total;
-        Random random = new Random();
-
-        total = (int) repository.count();
-        System.out.println(total);
-        do {
-            int id;
-
-            id = random.nextInt(total);
-            cPostalEntidad = repository.findById(id).orElse(null);
-            if (cPostalEntidad != null && cPostalEntidad.getEstadoId() != estadoId)
-                cPostalEntidad = null;
-        } while (cPostalEntidad == null);
+      
+        cPostalEntidad = repository.getRandomByEstadoId(estadoId);
 
         return cPostalEntidad;
     }

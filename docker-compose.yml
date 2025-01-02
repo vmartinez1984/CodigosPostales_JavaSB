@@ -1,0 +1,34 @@
+services:
+  mysqlcp:
+    image: mysql:latest
+    restart: always
+    container_name: mysql-cp   
+    environment:
+      MYSQL_DATABASE: 'CodigosPostales'
+      MYSQL_ROOT_PASSWORD: '123456'
+    ports:
+      # <Port exposed> : <MySQL Port running inside container>
+      - '3306:3306'
+    volumes:    
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql  
+    networks:
+      - app-network
+  
+  app:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysqlcp
+    container_name: app-cp
+    restart: always
+    networks:
+      - app-network
+  
+
+
+networks:   # los crea en el mismo segmento
+  app-network:
+    driver: bridge

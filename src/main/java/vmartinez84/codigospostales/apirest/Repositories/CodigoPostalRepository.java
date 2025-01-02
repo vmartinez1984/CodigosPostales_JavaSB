@@ -36,4 +36,10 @@ public interface CodigoPostalRepository extends JpaRepository<CodigoPostalEntida
 
     @Query("SELECT c FROM CodigoPostalEntidad c WHERE c.EstadoId = ?1 and c.AlcaldiaId = ?2 and c.Asentamiento like %?3%")
     List<CodigoPostalEntidad> findCodigosPostalesPorEstadoIdAlcaldiaIdYColonia(int id, int alcaldiaId, String colonia);
+
+    @Query("SELECT c FROM CodigoPostalEntidad c ORDER BY RAND() LIMIT 1")
+    CodigoPostalEntidad getRandom();
+
+    @Query("SELECT c FROM CodigoPostalEntidad c WHERE c.EstadoId = ?1 ORDER BY RAND() LIMIT 1")
+    CodigoPostalEntidad getRandomByEstadoId(int estadoId);
 }
